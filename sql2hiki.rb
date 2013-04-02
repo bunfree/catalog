@@ -2,10 +2,9 @@
 
 require 'sequel'
 
-Sequel.sqlite('15th_catalog.sqlite')
+Sequel.sqlite('16th_catalog.sqlite')
 
-class Catalog < Sequel::Model
-end
+require_relative 'catalog'
 
 Catalog.each do |c|
     c.exhibit_ruby = 'ヨビブース' if c.exhibit_ruby.nil?
@@ -53,7 +52,7 @@ EOF
 EOF
 
     categ = c.booth[/^./]
-    title = "第十五回サークル一覧（#{categ}）"
+    title = "第十六回サークル一覧（#{categ}）"
     file = './hiki/' + categ + '.txt'
     if File.exist?(file) then
     	File.open(file, "a") do |f|
