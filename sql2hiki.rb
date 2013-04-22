@@ -2,7 +2,7 @@
 
 require 'sequel'
 
-Sequel.sqlite('16th_catalog.sqlite')
+Sequel.sqlite('cho_catalog.sqlite')
 
 require_relative 'catalog'
 
@@ -52,7 +52,7 @@ EOF
 EOF
 
     categ = c.booth[/^./]
-    title = "第十六回サークル一覧（#{categ}）"
+    title = "超文学フリマサークル一覧（#{categ}）"
     file = './hiki/' + categ + '.txt'
     if File.exist?(file) then
     	File.open(file, "a") do |f|
